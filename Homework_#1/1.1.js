@@ -1,0 +1,14 @@
+console.log('hello');
+console.log('owu');
+console.log('com');
+console.log('ua');
+console.log('1');
+console.log('10');
+console.log('-999');
+console.log('123');
+console.log('3.14');
+console.log('2.7');
+console.log('16');
+console.log('true');
+console.log('false');
+console.log('---------');
