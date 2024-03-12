@@ -4,44 +4,34 @@
 // Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль//
 
 
-let task1 = {
-    id: 2,
-    height: 195,
-    expression: 'neutral',
-    hobby: 'drawing',
-    Song: 'Japanese',
-    members: 10,
-    color: 'blue',
-    job: 'programmer',
-    Favourite_country: 'Japan',
-    Skill: 'fast tapping',
+let task1 = [
 
-}
+    {id: 2, height: 195, expression: 'neutral', hobby: 'drawing', Song: 'Japanese', members: 10, color: 'blue', job: 'programmer', Favourite_country: 'Japan', Skill: 'fast tapping'}
+
+]
 
 console.log(task1)
-console.log(task1.id)
-console.log(task1.height)
-console.log(task1.expression)
-console.log(task1.hobby)
-console.log(task1.Song)
-console.log(task1.members)
-console.log(task1.color)
-console.log(task1.job)
-console.log(task1.Favourite_country)
-console.log(task1.Skill)
+console.log(task1[0].id)
+console.log(task1[0].height)
+console.log(task1[0].expression)
+console.log(task1[0].hobby)
+console.log(task1[0].Song)
+console.log(task1[0].members)
+console.log(task1[0].color)
+console.log(task1[0].job)
+console.log(task1[0].Favourite_country)
+console.log(task1[0].Skill)
 
 console.log('------------------')
 console.log('------------------')
 
 //Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.//
 
-let books = {
+let books = [
 
-    title: 'Harry Potter',
-    pageCount: 60,
-    genre: 'fantastic, adventure, school life'
+    {title: 'Harry Potter', pageCount: 60, genre: 'fantastic, adventure, school life'}
 
-}
+]
 
 console.log(books)
 
@@ -50,17 +40,13 @@ console.log('------------------')
 
 //Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors. Поле "автори" - являється  масивом. Кожен автор має поля name та age.//
 
-let books2 = {
+let books2 = [
 
-    title: 'Harry Potter',
-    pageCount: 90,
-    genre: 'fantastic, adventure',
-    authors: 'Johna Rolling'
+    {title: 'Harry Potter', pageCount: 90, genre: 'fantastic, adventure', authors: 'Johna Rolling', name: 'Johna', age: 60}
 
-}
+]
 
 console.log(books2)
-console.log(books2.authors)
 
 //Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача//
 
@@ -219,11 +205,21 @@ document.write('<h2>-----------------------------</h2>')
 //Потрібно знайти та вивести максимальне число з тих двох.//
 // Також потрібно врахувати коли введені рівні числа.//
 
-let num_a = 213
+let num_a = 576
 
-let num_b = 76
+let num_b = 576
 
-    document.write(num_a + num_b + ' MAX')
+if (num_a === num_b){
+
+
+    document.write(Math.max(num_a, num_b) + ' Same' + ' MAX')
+
+}
+if (num_a < num_b || num_b < num_a) {
+
+    document.write(Math.max(num_a, num_b) + ' MAX')
+
+}
 
 //є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,//
 //  буде присвоювати змінній х значення "default"  якщо ви намагаєтесь присвоїти в неї falsy-значення (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).//
