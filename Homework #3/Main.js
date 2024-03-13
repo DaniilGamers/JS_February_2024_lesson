@@ -39,38 +39,15 @@ document.write('<h2>-------------------------------------</h2>')
 
 //За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.//
 
-let arr2 = [
-
-    {name: 'one', id: 0},
-    {name: 'two', id: 1},
-    {name: 'three', id: 2},
-    {name: 'four', id: 3},
-    {name: 'five', id: 4},
-    {name: 'six', id: 5},
-    {name: 'seven', id: 6},
-    {name: 'eight', id: 7},
-    {name: 'nine', id: 8},
-    {name: 'ten', id: 9},
-    {name: 'eleven', id: 10},
-    {name: 'twelve', id: 11},
-    {name: 'thirteen', id: 12},
-    {name: 'fourteen', id: 13},
-    {name: 'fifteen', id: 14},
-    {name: 'sixteen', id: 15},
-    {name: 'seventeen', id: 16},
-    {name: 'eighteen', id: 17},
-    {name: 'nineteen', id: 18},
-    {name: 'twenty', id: 19}
-
-]
+let arr2 = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twelve']
 
 let i = 0;
 
-while (i < arr2.length) {
+while (i < 20) {
 
     let arr2Element = arr2[i];
-    document.write(`<div><h1>${arr2Element.name}</h1></div>`)
-    i++
+    document.write(`<div><h1>${arr2Element}</h1></div>`)
+i++
 
 }
 
@@ -79,62 +56,20 @@ document.write('<h2>-----------------------------</h2>')
 
 //За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.//
 
-let arr3 = [
-
-    {name: 'one'},
-    {name: 'two'},
-    {name: 'three'},
-    {name: 'four'},
-    {name: 'five'},
-    {name: 'six'},
-    {name: 'seven'},
-    {name: 'eight'},
-    {name: 'nine'},
-    {name: 'ten'},
-    {name: 'eleven'},
-    {name: 'twelve'},
-    {name: 'thirteen'},
-    {name: 'fourteen'},
-    {name: 'fifteen'},
-    {name: 'sixteen'},
-    {name: 'seventeen'},
-    {name: 'eighteen'},
-    {name: 'nineteen'},
-    {name: 'twenty'},
-    //--------------------
-    {name: 'one', id: 0},
-    {name: 'two', id: 1},
-    {name: 'three', id: 2},
-    {name: 'four', id: 3},
-    {name: 'five', id: 4},
-    {name: 'six', id: 5},
-    {name: 'seven', id: 6},
-    {name: 'eight', id: 7},
-    {name: 'nine', id: 8},
-    {name: 'ten', id: 9},
-    {name: 'eleven', id: 10},
-    {name: 'twelve', id: 11},
-    {name: 'thirteen', id: 12},
-    {name: 'fourteen', id: 13},
-    {name: 'fifteen', id: 14},
-    {name: 'sixteen', id: 15},
-    {name: 'seventeen', id: 16},
-    {name: 'eighteen', id: 17},
-    {name: 'nineteen', id: 18},
-    {name: 'twenty', id: 19}
-
-]
+let arr3 = ['','','','','','','','','','', '','','','','','','', '', '', '', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twelve']
+let arr3number = ['','','','','','','','','','', '','','','','','','','','','', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
 while (i < 40) {
 
     let arr3Element = arr3[i];
-    document.write(`<div>${arr3Element.name} ${arr3Element.id}</div>`)
+    let arr3NumberElement = arr3number[i];
+    document.write(`<div><h1>${arr3Element} --- ${arr3NumberElement}</h1></div>`)
     i++
 
 }
 
-document.write('<h2>-----------------------------</h2>')
-document.write('<h2>-----------------------------</h2>')
+    document.write('<h2>-----------------------------</h2>')
+    document.write('<h2>-----------------------------</h2>')
 
 //Використовуючи данні з масиву, за допомоги document.write та циклу//
 // побудувати структуру по шаблону//
@@ -142,7 +77,7 @@ document.write('<h2>-----------------------------</h2>')
 
 //Масив://
 
-let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+    let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
 
 //ШАБЛОН://
 
@@ -156,87 +91,89 @@ let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'an
 //     -->
 // </ul>
 
-for (const list of listOfItems) {
+    document.write(`<ul>`)
 
-    document.write(`<ul><h2><li><div>${list}</div></li></h2>
+    for (const list of listOfItems) {
 
-</ul>`)
-
-}
+        document.write(`<h2><li><div>${list}</div></li></h2>`)
 
 
-let products = [
-    {
-        title: 'milk',
-        price: 22,
-        image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
-    },
-    {
-        title: 'juice',
-        price: 27,
-        image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
-    },
-    {
-        title: 'tomato',
-        price: 47,
-        image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
-    },
-    {
-        title: 'tea',
-        price: 15,
-        image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
-    },
-];
+    }
+    document.write(`</ul>`)
 
-for (const product of products) {
 
-    document.write(`<div class="product-card">
+    let products = [
+        {
+            title: 'milk',
+            price: 22,
+            image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+        },
+        {
+            title: 'juice',
+            price: 27,
+            image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+        },
+        {
+            title: 'tomato',
+            price: 47,
+            image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+        },
+        {
+            title: 'tea',
+            price: 15,
+            image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+        },
+    ];
+
+    for (const product of products) {
+
+        document.write(`<div class="product-card">
         <h3 class="product-title">${product.title} --- Price ${product.price}</h3>
         <img src="${product.image}" alt="" class="product-image">
 </div>`)
 
-}
+    }
 
 
 //є масив
 
-let users = [
-    {name: 'vasya', age: 31, status: false},
-    {name: 'petya', age: 30, status: true},
-    {name: 'kolya', age: 29, status: true},
-    {name: 'olya', age: 28, status: false},
-    {name: 'max', age: 30, status: true},
-    {name: 'anya', age: 31, status: false},
-    {name: 'oleg', age: 28, status: false},
-    {name: 'andrey', age: 29, status: true},
-    {name: 'masha', age: 30, status: true},
-    {name: 'olya', age: 31, status: false},
-    {name: 'max', age: 31, status: true}
-];
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
 
-for (let user of users) {
-    if (user.status === false) {
-        console.log(user);
+    for (let user of users) {
+        if (user.status === false) {
+            console.log(user);
+        }
+
     }
 
-}
+    console.log('-----------------------')
+    console.log('-----------------------')
 
-console.log('-----------------------')
-console.log('-----------------------')
+    for (let user of users) {
+        if (user.status === true) {
+            console.log(user);
+        }
 
-for (let user of users) {
-    if (user.status === true) {
-        console.log(user);
     }
 
-}
+    console.log('-----------------------')
+    console.log('-----------------------')
 
-console.log('-----------------------')
-console.log('-----------------------')
+    for (let user of users) {
+        if (user.age > 30) {
+            console.log(user);
+        }
 
-for (let user of users) {
-    if (user.age > 30) {
-        console.log(user);
     }
-
-}
