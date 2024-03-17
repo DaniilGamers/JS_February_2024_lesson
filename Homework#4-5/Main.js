@@ -1,3 +1,5 @@
+//творити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б//
+
 function calc(a, b) {
 
     let result = a + b;
@@ -9,6 +11,8 @@ function calc(a, b) {
 let triangle = calc(5,6)
 console.log('triangle ' + triangle + ' cm')
 
+
+//створити функцію яка обчислює та повертає площу кола з радіусом r//
 
 function calc(r, d){
 
@@ -26,6 +30,9 @@ console.log('circle ratio ' + r + ' m')
 
 console.log('------------------')
 console.log('------------------')
+
+//створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r//
+
 function calc(h, r){
 
     let result = h + r;
@@ -39,6 +46,10 @@ function calc(h, r){
 let h1 = calc(11,8)
 let h2 = calc(4,14)
 console.log('Height ' + h1 + ' cm' + '; Ratio ' + h2 + ' m')
+
+
+//створити функцію яка приймає масив та виводить кожен його елемент//
+
 
 let things = [
 
@@ -62,6 +73,8 @@ function thingFilter(things){
 let filter = thingFilter(things);
 console.log(filter);
 
+//створити функцію яка створює параграф з текстом. Текст задати через аргумент//
+
 
 function text() {
 
@@ -81,6 +94,9 @@ document.write(text('Lorem ipsum dolor sit amet, consectetur adipisicing elit. D
 
 document.write('<h2>-----------------------------</h2>');
 document.write('<h2>-----------------------------</h2>');
+
+
+//створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий//
 
 
 function text2() {
@@ -112,7 +128,7 @@ document.write(`</ul></li>`)
 document.write('<h2>-----------------------------</h2>');
 document.write('<h2>-----------------------------</h2>');
 
-let count = 0
+//створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)//
 
 function text3() {
 
@@ -149,6 +165,8 @@ document.write(`</ul></li>`)
 document.write('<h2>-----------------------------</h2>');
 document.write('<h2>-----------------------------</h2>');
 
+//створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список//
+
 function printerArray(array) {
     for (const item of array) {
         console.log(item);
@@ -166,6 +184,8 @@ let things2 = [
 
 printerArray(things2)
 
+//створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.//
+
 let things3 = [
 
     {id: 0, name: 'Dani', age: 44},
@@ -181,6 +201,8 @@ document.write(`<div><h2>| Id ${things3[2].id} | Name ${things3[2].name} | Age $
 
 document.write('<h2>-----------------------------</h2>');
 document.write('<h2>-----------------------------</h2>');
+
+//створити функцію яка повертає найменьше число з масиву//
 
 function numberFilter(numbers) {
      let filteredNumbers = [];
@@ -199,6 +221,8 @@ let numbers = [ 1110, 2021, 102, 2031
 console.log(Math.min(numbers[0], numbers[1], numbers[2], numbers[3]) + ' Min')
 document.write(Math.min(numbers[0], numbers[1], numbers[2], numbers[3]) + ' Min')
 
+//створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13//
+
 
 function sum(arr){
 
@@ -216,56 +240,59 @@ console.log(number);
 
 
 
-
+//створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах//
+// Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]//
 
 
 function swap(arr,index1,index2){
 
-    let swap = ([11,22,33,44, 0, 1]);
-    let number_index1 = ([]);
-    let number_index2 = ([]);
 
-
-
-    [swap[4]] = [number_index1[0]];
-
-        [swap[5]] =  [number_index2[1]];
-
-
-
-    return swap
-
-
-
+return [arr, '11, 22, 33, 44']
 
 
 }
 
-let numbers6 = swap();
+console.log(swap([11, 22, 33, 44], 0 ,1));
 
-console.log(numbers6)
-
-let money = [
-
-    {currency: 'USD', value: 40},
-    {currency: 'EUR', value: 42},
-    {currency: 'UAH', value: 100},
-    {currency: 'GBR', value: 50}
-
-];
+//Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)//
+// Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250//
 
 function exchange(sumUAH,currencyValues,exchangeCurrency){
 
+    let i = [2];
+
+    let money = [
+
+        {currency: 'USD', value: 40},
+        {currency: 'EUR', value: 42},
+        {currency: 'UAH', value: 100},
+        {currency: 'GBR', value: 50}
+
+    ];
+
+    for (const moneyElement of money) {
+
+        console.log(moneyElement.currency)
+        console.log(moneyElement.value)
+
+
+
+
+    }
+
+
+    money.currency = money.value;
+
+
+
+    let valueNumber = [i > money]
+
+    //let valueCountryNumber = [money.currency > money.value]
+
     let exchange = ([100000])
-    return exchange / 595 + 40 + 42
+    return (exchange / 595 + money[i].value + ' '  + money[i].currency)
 
-
-}
-
-for (const moneyElement of money) {
-
-    console.log(moneyElement.currency)
 
 }
 let number8 = exchange();
-console.log(number8 + ' USD')
+console.log(number8)
