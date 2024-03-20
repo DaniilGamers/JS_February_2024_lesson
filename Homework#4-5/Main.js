@@ -62,7 +62,7 @@ function thingFilter(things){
     let filteredThings = [];
     for (const thing of things){
 
-        if (thing.age > 10){
+        if (thing.age > 20){
             filteredThings.push(thing);
         }
 

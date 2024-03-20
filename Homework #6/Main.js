@@ -33,7 +33,7 @@ console.log(Str.toLowerCase() + '  ' + Str2.toLowerCase() + '  ' + Str3.toLowerC
 
 let str_dirty = ' dirty string   ';
 
-console.log(str_dirty.replaceAll(' ' || '  ', ''))
+console.log(str_dirty.trim())
 
 
 //Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
@@ -64,11 +64,16 @@ let numbers = [10, 8, -7, 55 ,987, -1011, 0, 1050, 0]
 
 numbers.map(function (value, index) {
 
-    return {...value, id: index + 1};
+    return {value: value + +2, id: index + 1};
 
 });
 
 console.log(numbers)
+
+
+let numsTest = [12,61,6]
+
+console.log(numsTest)
 
 //створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
 
@@ -76,25 +81,36 @@ function sortNums(direction){
 
     let nums = [11, 21, 3];
 
-    nums = nums.sort();
 
-console.log(nums.reverse());
+
+    let reversed = 'ascending'
+
+
+    let nums_sorted = nums.sort((a, b) => {
+
+       return a - b;
+
+    });
+
+    if (reversed === direction){
+
+
+        console.log(nums.reverse());
+
+
+    }else{
+
+
+        console.log(nums);
+    }
+
+
+
+
 
 }
 
 sortNums('ascending');
-
-function sortNums2(direction){
-
-    let nums = [11, 21, 3];
-
-    nums = nums.sort();
-
-    console.log(nums);
-
-}
-
-sortNums2('descending');
 
 
 
@@ -141,7 +157,7 @@ console.log(filteredMonth);
 //за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
 
 
-let Courses = [{coursesAndDurationArray}]
+let Courses = coursesAndDurationArray
 Courses.map((value, index)  => {
 
     return {id: index + 1, title: coursesAndDurationArray.title, monthDuration: coursesAndDurationArray.monthDuration};
@@ -150,17 +166,7 @@ Courses.map((value, index)  => {
 
 console.log(Courses)
 
-
-
-
-//описати колоду карт (від 6 до туза без джокерів)
-
-//- знайти піковий туз
-//  - всі шістки
-//  - всі червоні карти
-//  - всі буби
-//  - всі трефи від 9 та більше
-
+//card arrays
 
 const cards = [
 
@@ -173,15 +179,6 @@ const cards = [
     {cardSuit: 'spades', value:'jack', color: 'black'},
     {cardSuit: 'spades', value: 'queen', color: 'black'},
     {cardSuit: 'spades', value: 'king', color: 'black'},
-    {cardSuit: 'clubs', value: '6', color: 'black'},
-    {cardSuit: 'clubs', value: '7', color: 'black'},
-    {cardSuit: 'clubs', value: '8', color: 'black'},
-    {cardSuit: 'clubs', value: '9', color: 'black'},
-    {cardSuit: 'clubs', value: '10', color: 'black'},
-    {cardSuit: 'clubs', value: 'ace', color: 'black'},
-    {cardSuit: 'clubs', value:'jack', color: 'black'},
-    {cardSuit: 'clubs', value: 'queen', color: 'black'},
-    {cardSuit: 'clubs', value: 'king', color: 'black'},
     {cardSuit: 'hearts', value: '6', color: 'red'},
     {cardSuit: 'hearts', value: '7', color: 'red'},
     {cardSuit: 'hearts', value: '8', color: 'red'},
@@ -191,6 +188,15 @@ const cards = [
     {cardSuit: 'hearts', value:'jack', color: 'red'},
     {cardSuit: 'hearts', value: 'queen', color: 'red'},
     {cardSuit: 'hearts', value: 'king', color: 'red'},
+    {cardSuit: 'clubs', value: '6', color: 'black'},
+    {cardSuit: 'clubs', value: '7', color: 'black'},
+    {cardSuit: 'clubs', value: '8', color: 'black'},
+    {cardSuit: 'clubs', value: '9', color: 'black'},
+    {cardSuit: 'clubs', value: '10', color: 'black'},
+    {cardSuit: 'clubs', value: 'ace', color: 'black'},
+    {cardSuit: 'clubs', value:'jack', color: 'black'},
+    {cardSuit: 'clubs', value: 'queen', color: 'black'},
+    {cardSuit: 'clubs', value: 'king', color: 'black'},
     {cardSuit: 'diamonds', value: '6', color: 'red'},
     {cardSuit: 'diamonds', value: '7', color: 'red'},
     {cardSuit: 'diamonds', value: '8', color: 'red'},
@@ -202,6 +208,160 @@ const cards = [
     {cardSuit: 'diamonds', value: 'king', color: 'red'}
 ]
 
+//описати колоду карт (від 6 до туза без джокерів)
+
+//- знайти піковий туз
+
+let cardSuits8 = ['spade'];
+
+let Values8 = ['6'];
+
+let colors35 = ['red','black'];
+
+let desk7 = () => {
+
+    let desks_spades_only = [];
+
+    for (const cardSuit7 of cardSuits8) {
+
+        for (const value7 of Values8) {
+
+            for (const color_7 of colors35) {
+
+                desks_spades_only.push({cardSuit: cardSuit7, value: value7, color: color_7})
+
+            }
+
+        }
+
+    }
+
+    return desks_spades_only
+
+}
+
+console.log(desk7());
+
+
+
+//  - всі шістки
+
+let cardSuits2 = ['spade', 'diamond','heart', 'clubs'];
+
+let sixValues = ['6'];
+
+let colors32 = ['red','black'];
+
+let desk2 = () => {
+
+    let desks_6_only = [];
+
+    for (const cardSuit2 of cardSuits2) {
+
+        for (const value2 of sixValues) {
+
+            desks_6_only.push({cardSuit: cardSuit2, value: value2})
+
+        }
+
+    }
+
+    desks_6_only.map(item=> item.cardSuit === 'diamonds' || item.cardSuit === 'hearts'  ? item.color =  'red' : item.color = 'black')
+
+    return desks_6_only
+
+}
+console.log(desk2());
+
+//  - всі червоні карти
+
+let cardSuits3 = ['spade', 'clubs'];
+
+let Values2 = [6, 7, 8, 9, 10, 'ace','jack','queen','king'];
+
+let colors2 = ['black'];
+
+let desk3 = () => {
+
+    let desks_black_only = [];
+
+    for (const cardSuit3 of cardSuits3) {
+
+        for (const Values_2 of Values2) {
+
+            desks_black_only.push({cardSuit: cardSuit3, value: Values_2})
+
+        }
+
+    }
+
+    desks_black_only.map(item=> item.cardSuit === 'diamonds' || item.cardSuit === 'hearts'  ? item.color =  'red' : item.color = 'black')
+
+    return desks_black_only
+
+}
+console.log(desk3());
+
+
+//  - всі буби
+
+let cardSuits4 = ['diamond'];
+
+let Values5 = [6, 7, 8, 9, 10, 'ace','jack','queen','king'];
+
+//let colors3 = ['red'];
+
+let desk4 = () => {
+
+    let desks_diamonds_only = [];
+
+    for (const cardSuit4 of cardSuits4) {
+
+        for (const values_5 of Values5) {
+
+            desks_diamonds_only.push({cardSuit: cardSuit4, value: values_5})
+
+        }
+
+    }
+
+    desks_diamonds_only.map(item=> item.cardSuit === 'diamonds' || item.cardSuit === 'hearts'  ? item.color =  'red' : item.color = 'black')
+
+    return desks_diamonds_only
+
+}
+console.log(desk4());
+
+
+//  - всі трефи від 9 та більше
+
+let cardSuits9 = ['clubs'];
+
+let Values9 = [9, 10, 'ace','jack','queen','king'];
+
+//let colors9 = ['red', 'black'];
+
+let desk8 = () => {
+
+    let desks_clubs_only = [];
+
+    for (const cardSuit9 of cardSuits9) {
+
+        for (const values_9 of Values9) {
+
+            desks_clubs_only.push({cardSuit: cardSuit9, value: values_9})
+        }
+
+    }
+
+    desks_clubs_only.map(item=> item.cardSuit === 'diamonds' || item.cardSuit === 'hearts'  ? item.color =  'red' : item.color = 'black')
+
+    return desks_clubs_only
+
+}
+console.log(desk8());
+
+
 
 //{
 //     cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
@@ -210,9 +370,9 @@ const cards = [
 // }
 
 
-let cardSuits = ['', 'spade', 'diamond','heart', 'clubs'];
-       let values = ['', 6, 7, 8, 9, 10, 'ace','jack','queen','king','joker'];
-    let colors = ['', 'red','black'];
+let cardSuits = ['spade', 'diamond','heart', 'clubs'];
+       let values = [6, 7, 8, 9, 10, 'ace','jack','queen','king'];
+    let colors = ['red','black'];
 
     let desk = () => {
 
@@ -222,7 +382,7 @@ let cardSuits = ['', 'spade', 'diamond','heart', 'clubs'];
 
             for (const value of values){
 
-                 desks.push({cardSuit: cardSuit, value:value})
+                 desks.push({cardSuit: cardSuit, value: value})
 
             }
 
