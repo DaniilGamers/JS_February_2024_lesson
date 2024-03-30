@@ -1,6 +1,6 @@
 //- взяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини. Відобразити всі поля кожної корзини.
 
-/*fetch('https://dummyjson.com/carts')
+fetch('https://dummyjson.com/carts')
     .then(res => res.json())
     .then(carts => {
         for (const cart of carts.carts) {
@@ -20,38 +20,4 @@
             }
         }
 document.write('<h1>------------------------------------ <br> ------------------------------------</h1>')
-    });*/
-
-
-
-//
-
-
-fetch('http://jsonplaceholder.typicode.com/users')
-    .then(res => res.json())
-    .then(users => {
-        for (const user of users) {
-            console.log(users)
-
-
-            let divUsers = document.createElement('div');
-            divUsers.innerHTML = '';
-            divUsers.classList.add('users');
-            document.body.appendChild(divUsers);
-
-            for (let userElement of users) {
-                console.log(userElement)
-
-                let infoUser = document.createElement('h3')
-
-                document.write(`<ul><h3><li>${userElement.id} --- ${userElement.name}</a></li></h3></ul>`);
-
-                document.write('<h2>--------------------------------</h2>')
-
-
-
-                document.body.appendChild(infoUser)
-            }
-        }
-
     });
