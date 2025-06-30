@@ -4,7 +4,6 @@
 
 const postId = new URL(location.href).searchParams.get('postId');
 console.log(postId);
-let CommentsUrl = `https://jsonplaceholder.typicode.com/comments/${postId}`
 
 
 let returnButton2 = document.createElement('div')
@@ -30,7 +29,9 @@ returnBtn2.innerHTML = `
     `
 returnBtn2.addEventListener('click',() =>{
 
-    location.href = `user_details.html?id=` + postId;
+    const userId = JSON.parse(localStorage.getItem('userId'))
+
+    location.href = `user_details.html?id=` + `${userId.userId}`;
 
 
 
@@ -43,8 +44,12 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
     .then(value => value.json())
     .then(posts => {
 
+        let postInfoBlock = document.createElement("div")
+        postInfoBlock.classList.add('postInfoBlock')
+        document.body.appendChild(postInfoBlock)
+
         for (let postInfoKey in posts) {
-            if (postInfoKey === 'id' || postInfoKey === 'title' || postInfoKey === 'body') {
+            if (postInfoKey === 'title' || postInfoKey === 'body') {
 
             let PostBlock = document.createElement('div')
             PostBlock.classList.add('PostBlock')
@@ -53,14 +58,15 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
             PostInfo.classList.add('PostInfoBlock')
 
 
-                    let h3 = document.createElement('h3')
-                    h3.classList.add('InfoText')
-                    h3.innerText = `${postInfoKey}`
-                    let h2 = document.createElement('h3')
-                    h2.innerText = `${posts[postInfoKey]}`
-                    h3.appendChild(h2)
-                    PostInfo.appendChild(h3)
+                    let h2 = document.createElement('h2')
+                    h2.classList.add('InfoText')
+                    h2.innerText = `${postInfoKey}`
+                    let h3 = document.createElement('h5')
+                    h3.innerText = `${posts[postInfoKey]}`
+                    h2.appendChild(h3)
+                    PostInfo.appendChild(h2)
                     PostBlock.appendChild(PostInfo)
+                    postInfoBlock.append(PostBlock)
 
                 }
 
@@ -73,15 +79,21 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
 
     )
 
+setTimeout(() => {
 
-        fetch(CommentsUrl)
+
+        fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
             .then(value => value.json())
             .then(comments => {
 
                 console.log(comments)
 
-                for (let commentKey in comments) {
-                    if (commentKey === 'id' || commentKey === 'name' || commentKey === 'email' || commentKey === 'body') {
+                let InfoBlockComment = document.createElement('div')
+                InfoBlockComment.classList.add('commentInfoBlockList')
+                document.body.appendChild(InfoBlockComment)
+
+                for (const comment of comments) {
+
 
                         let CommentBlock = document.createElement('div')
                         CommentBlock.classList.add('CommentInfoBlock')
@@ -90,21 +102,20 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
                         let CommentId = document.createElement('div')
                         CommentId.classList.add('CommentBlock')
 
-                        let h3Comment = document.createElement('h3')
-                        h3Comment.classList.add('CommentText')
-                        h3Comment.innerText = `${commentKey}`
-                        let h2 = document.createElement('h3')
-                        h2.innerText = `${comments[commentKey]}`
-                        h3Comment.appendChild(h2)
-                        CommentId.appendChild(h3Comment)
+                        let h2Comment = document.createElement('h2')
+                        h2Comment.classList.add('CommentText')
+                        h2Comment.innerHTML = `</div><h3>${comment.name}</h3><br><div class="LineComments"></div>`
+                        let h3 = document.createElement('h3')
+                        h3.innerHTML = `<h3 style="background-color: dodgerblue; color: white; border-radius: 50px; width: 50%; text-align: center">${comment.email}</h3><br><h4>${comment.body}</h4>`
+                        h2Comment.appendChild(h3)
+                        CommentId.appendChild(h2Comment)
                         CommentBlock.appendChild(CommentId)
-                    }
+                        InfoBlockComment.append(CommentBlock)
+
+
                 }
-let lineBetweenComments = document.createElement('div')
-                lineBetweenComments.classList.add('LineComments')
-                document.body.appendChild(lineBetweenComments)
-
-
 
 
     });
+
+}, 1000);
